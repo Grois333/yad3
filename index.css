@@ -1,0 +1,55 @@
+ul.listings {
+  list-style: none;
+  padding-left: 30px;
+}
+
+ul.listings li{
+  display: flex;
+  padding-left: 6px;
+}
+
+ul.listings img{
+  width: 50px;
+  height: 50px;
+}
+
+.listing-container{
+  padding: 6px;
+}
+
+.listing-container span {
+  color: #999;
+  font-size: 0.875rem;
+}
+
+.listing-container a{
+  padding-left: 4px;
+  text-decoration: none;
+}
+
+.listing-container a:hover{
+  text-decoration: underline;
+}
+
+.listing-container div span::before{
+  content: "$";
+}
+
+.listing-container div span::after{
+  content: ".00";
+}
+
+.listing-container div{
+  padding: 4px 0;
+}
+
+
+.listing-container div span{
+  border: 1px #666 solid;
+  color: black;
+  border-radius: 4px;
+  padding: 4px;
+
+  font-size: 0.875rem;
+  font-weight: lighter;
+}
