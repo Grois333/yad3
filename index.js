@@ -3,28 +3,32 @@ const listings = [
     image: 'https://images.craigslist.org/00D0D_cw9SyIn9gD4_600x450.jpg',
     title: 'Vancouver Downtown',
     price: 3000,
-    creatAt: 'Jul 13'
+    createdAt: 'Jul 13'
   },
 
   {
     image: 'https://images.craigslist.org/00F0F_fP3lawClZjg_600x450.jpg',
     title: 'Toronto Downtown',
     price: 3000,
-    creatAt: 'Jul 12'
+    createdAt: 'Jul 12'
   },
 
   {
     image: 'https://images.craigslist.org/00W0W_2nugv8sPJct_600x450.jpg',
     title: 'Ottawa Downtown',
     price: 3000,
-    creatAt: 'Jul 11'
+    createdAt: 'Jul 11'
   },
 
 
 
 ];
 
+//Create HTML
 
+const render = ()=> {
+
+  document.querySelector('ul').innerHTML = '';
 
 listings.forEach(listing => {
   const li = document.createElement('li');
@@ -36,7 +40,7 @@ listings.forEach(listing => {
   container.className = 'listing-container';
 
   const date = document.createElement('span');
-  date.innerHTML = listing.creatAt;
+  date.innerHTML = listing.createdAt;
 
   const title = document.createElement('a');
   title.innerHTML = listing.title;
@@ -61,3 +65,38 @@ listings.forEach(listing => {
 
 
 });
+
+};
+
+render();
+
+//On click function
+
+function addNewListing() {
+
+  const newTitle = document.querySelector('.add-listing-form input.title').value;
+
+  const newPrice = document.querySelector('.add-listing-form input.price').value;
+
+  const newImgUrl = document.querySelector('.add-listing-form input.img-url').value;
+
+  const newCreatedAt = (new Date).toString().slice(4, 10);
+
+  if(!newTitle || !newPrice || !newImgUrl) return;
+
+  const newlisting = {
+    title: newTitle,
+    price: newPrice,
+    image: newImgUrl,
+    createdAt: newCreatedAt,
+  };
+
+  listings.push(newlisting);
+
+  render();
+
+  document.querySelectorAll('.add-listing-form input').forEach(input =>{
+    input.value = '';
+  });
+
+}
