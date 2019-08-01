@@ -24,13 +24,21 @@ const listings = [
 
 ];
 
+let searchText = '';
+
 //Create HTML
 
 const render = ()=> {
 
   document.querySelector('ul').innerHTML = '';
 
-listings.forEach(listing => {
+  listings
+  .filter(listing => {
+    if(!searchText || (listing.title.toLowerCase().includes(searchText.toLowerCase() )) ) return true;
+    else return false;
+  })
+
+  .forEach(listing => {
   const li = document.createElement('li');
 
   const img = document.createElement('img');
@@ -68,7 +76,9 @@ listings.forEach(listing => {
 
 };
 
-render();
+render();  //Render from the beggining
+
+
 
 //On click function
 
@@ -82,7 +92,7 @@ function addNewListing() {
 
   const newCreatedAt = (new Date).toString().slice(4, 10);
 
-  if(!newTitle || !newPrice || !newImgUrl) return;
+  if(!newTitle || !newPrice || !newImgUrl) return; //if there is no data, it wont add it
 
   const newlisting = {
     title: newTitle,
@@ -100,3 +110,19 @@ function addNewListing() {
   });
 
 }
+
+
+function search() {
+
+  const nextSearchText = document.querySelector('input.search').value;
+  searchText = nextSearchText;
+
+  render();
+
+}
+
+  // function searchKeypress(event) {
+  //   // console.log(event.keyCode);
+  //   if(event.keyCode === 13) search();
+  //
+  // }

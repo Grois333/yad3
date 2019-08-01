@@ -1,37 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Yad 3</title>
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
 
-    <ul class="listings"></ul>
+<head>
+  <meta charset="utf-8">
+  <title>Yad 3</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
 
-    <div class="add-listing-form">
+<body>
 
-      <label for="">
-        Title
+  <div class="search-container">
+
+    <input class="search" onKeyup="search()" placeholder="search apts/housing for rent" />
+    <button onClick="search()" type="button" name="button">
+      <svg viewbox="0 0 100 100" >
+        <circle cx=47 cy=47 r=15  />
+        <line x1=57 y1=57 x2=75 y2=75 />
+      </svg>
+    </button>
+
+  </div>
+
+
+  <ul class="listings"></ul>
+
+  <div class="add-listing-form">
+
+    <label for="">
+      Title
       <input class="title" type="text" name="" value="" />
-      </label>
+    </label>
 
-      <label for="">
-        Price
-        <input class="price" type="number" name="" value="" />
-      </label>
+    <label for="">
+      Price
+      <input class="price" type="number" name="" value="" />
+    </label>
 
-      <label for="">
-        Image URL
-        <input class="img-url" type="text" name="" value="">
-      </label>
+    <label for="">
+      Image URL
+      <input class="img-url" type="text" name="" value="">
+    </label>
 
-      <button onClick="addNewListing()" type="button" name="button">Add</button>
+    <button onClick="addNewListing()" type="button" name="button">Add</button>
 
-    </div>
+  </div>
 
 
 
-   <script src="index.js" charset="utf-8"></script>
-  </body>
+  <script src="index.js" charset="utf-8"></script>
+</body>
+
 </html>

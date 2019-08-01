@@ -8,12 +8,74 @@ body{
   justify-content: space-between;
 }
 
+.search-container{
+  padding: 3px 8px;
+
+  display: flex;
+  justify-content: center;
+}
+
+.search-container input{
+  margin-right: 6px;
+
+  padding: 4px 6px;
+
+  border-radius: 4px;
+  border: 1px solid #ccc;
+
+  outline: none;
+}
+
+.search-container input:hover {
+  border-color: #aaa;
+}
+
+.search-container button{
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  padding: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  outline: none;
+}
+
+.search-container button:hover{
+  border-color: #aaa;
+}
+
+svg{
+  height: 25px;
+  width: 25px;
+}
+
+svg circle{
+  stroke: black;
+  stroke-width: 5px;
+  fill: transparent;
+}
+
+svg line{
+  stroke: black;
+  stroke-width: 5px;
+}
+
+button:hover circle{
+  fill: #ddd;
+}
+
 ul.listings {
   list-style: none;
   padding-left: 30px;
 
+  margin: 0;
 
-  height: 60vh;
+
+  height: calc(60vh -33px);
   overflow-y: auto;
 }
 
@@ -82,4 +144,10 @@ ul.listings img{
 
 .add-listing-form input{
   display: block;
+}
+
+.add-listing-form button{
+  border-radius: 4.20px;
+  color: black;
+  /* border-color: black; */
 }
