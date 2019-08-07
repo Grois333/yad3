@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>Yad 3</title>
   <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="modal.css">
 </head>
 
 <body>
@@ -32,6 +33,11 @@
     </label>
 
     <label for="">
+      Description
+      <input class="description" type="text" name="" value="" />
+    </label>
+
+    <label for="">
       Price
       <input class="price" type="number" name="" value="" />
     </label>
@@ -42,6 +48,41 @@
     </label>
 
     <button onClick="addNewListing()" type="button" name="button">Add</button>
+
+  </div>
+
+
+
+  <div class="shadow" onclick="closeModal(event)">
+
+    <div class="modal">
+
+      <div class="image-container">
+
+        <img src="http://buymyhousefast.info/wp-content/uploads/2019/05/apartments-for-rent-near-me-craigslist-renting-an-apartment-in.jpg" alt="">
+
+      </div>
+
+
+      <div class="modal-content">
+
+        <h2>Beautiful Downtown Luxury Apartment With Stunning English Bay View</h2>
+
+        <p>Oh wow such a view great balcony OMG</p>
+
+        <label>
+          <div> Contact the Lister </div>
+          <input class="contact-email" type="email" name="" value="" placeholder="Your Email Address" />
+        </label>
+        <button class="contact-button" type="button" name="button">Contact Lister</button>
+        <svg class="modal-close-button" viewBox="0 0 100 100">
+          <line x1=0 y1=0 x2=100 y2=100 />
+          <line x1=0 y1=100 x2=100 y2=0 />
+        </svg>
+
+      </div>
+
+    </div>
 
   </div>
 
